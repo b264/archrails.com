@@ -6,8 +6,28 @@
 </div>
 
 <div class="container">
-  things to add:
-  <h2>Gag Gift Ideas</h2>
-  <h2>Discussion Suggestions</h2>
-  <h2>Rails Directory</h2>
+  <div class="row">
+    <h2>Next Meetup:</h2>
+    <p>
+      Meeting Thursday March 10th, T-Rex 5th Floor, then relocating downstairs to Over Under Bar
+    </p>
+  </div>
+
+  <div class="row">
+    <div class="col-xs-6">
+      <h2>Discussion Topics</h2>
+      <p>
+        <%= link_to "See More", suggestions_path %> | <%= link_to "Have an Idea?", new_suggestion_path(category: "topic") %>
+      </p>
+    </div>
+    <div class="col-xs-6">
+      <h2>Gag Gift Ideas</h2>
+      <p>
+        <%= link_to "See More", suggestions_path %> | <%= link_to "Have an Idea?", new_suggestion_path(category: "gag_gift") %>
+      </p>
+    </div>
+  </div>
+  <div class="row">
+    <h2>Rails Shops Directory</h2>
+  </div>
 </div>
