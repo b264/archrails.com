@@ -9,25 +9,71 @@
   <div class="row">
     <h2>Next Meetup:</h2>
     <p>
-      Meeting Thursday March 10th, T-Rex 5th Floor, then relocating downstairs to Over Under Bar
+      Meeting Thursday March 10th, T-Rex 5th Floor, then relocating downstairs
+      to Over Under Bar.
+    </p>
+    <br>
+    <p>
+      <b>Discussion Topic:</b> During the last meetup, Josh Peck asked a great
+      question: "What kind of offer would you leave your current job for?"
+      His company, <%= link_to "Ikayzo", "http://www.ikayzo.com/" %>, is
+      expanding from Hawaii into St. Louis.
+    </p>
+    <p>
+      How often does a company swing into town and ask, "hey...what kind of place
+      would you want to work for?" Having an answer to this is great for
+      developers, great for companies, great for everyone. So that's what this
+      time around is about:
+    </p>
+    <p>
+      What <i>would</i> you leave your current gig for? What do you value in a place?
+    </p>
+    <p>
+      The Basecamp "don't work more than 40 hours...live your life!," or the
+      frenetic VC-powered "growth!" ?
+    </p>
+    <br>
+    <p>
+       RSVP to enter into the raffle for either cookies that my Mom
+       makes, or a gag gift. Feel free to suggest other topics or gag gifts!
     </p>
   </div>
 
+<br>
   <div class="row">
     <div class="col-xs-6">
       <h2>Discussion Topics</h2>
       <p>
-        <%= link_to "See More", suggestions_path %> | <%= link_to "Have an Idea?", new_suggestion_path(category: "topic") %>
+        <% if @topics %>
+        Recently added:
+        <ul>
+          <% @topics.each do |topic| %>
+          <li>
+            <%= topic.content %> <%= "- #{topic.author}" if topic.author? %>
+          </li>
+          <% end %>
+        </ul>
+        <% end %>
+        <%= link_to "See More", suggestions_path(category: "topic") %> |
+        <%= link_to "Have an Idea?", new_suggestion_path(category: "topic") %>
       </p>
     </div>
     <div class="col-xs-6">
       <h2>Gag Gift Ideas</h2>
       <p>
-        <%= link_to "See More", suggestions_path %> | <%= link_to "Have an Idea?", new_suggestion_path(category: "gag_gift") %>
+        <% if @gag_gifts %>
+        Recently added:
+        <ul>
+          <% @gag_gifts.each do |gag_gift| %>
+          <li>
+            <%= gag_gift.content %> <%= "- #{gag_gift.author}" if gag_gift.author? %>
+          </li>
+          <% end %>
+        </ul>
+        <% end %>
+        <%= link_to "See More", suggestions_path(category: "gag_gift") %> |
+        <%= link_to "Have an Idea?", new_suggestion_path(category: "gag_gift") %>
       </p>
     </div>
-  </div>
-  <div class="row">
-    <h2>Rails Shops Directory</h2>
   </div>
 </div>

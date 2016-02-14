@@ -1,6 +1,20 @@
+<div class="jumbotron jumbotron-fluid">
+  <div class="container">
+    <h1 class="display-3"> <%= titleize params[:category] %> Ideas</h1>
+  </div>
+</div>
+
 <div class="container">
   <div class="row">
     <div class="col-md-8 col-md-offset-2">
+      <ul>
+        <% @suggestions.each do |suggestion| %>
+          <li>
+            <%= suggestion.content %> <%= "- #{suggestion.author}" if suggestion.author? %>
+          </li>
+        <% end %>
+      </ul>
+      <%= link_to "Back", root_path %>
     </div>
   </div>
 </div>
