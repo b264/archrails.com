@@ -6,15 +6,13 @@
 
 <div class="container">
   <div class="row">
-    <div class="col-md-8 col-md-offset-2">
-      <ul>
-        <% @suggestions.each do |suggestion| %>
-          <li>
-            <%= suggestion.content %> <%= "- #{suggestion.author}" if suggestion.author? %>
-          </li>
-        <% end %>
-      </ul>
-      <%= link_to "Back", root_path %>
-    </div>
+    <ul>
+      <% @suggestions.each do |suggestion| %>
+        <li>
+          <%= suggestion.content %> <%= "- #{suggestion.author}" if suggestion.author? %>
+        </li>
+      <% end %>
+    </ul>
+    <%= link_to "Back", root_path %>
   </div>
 </div>
