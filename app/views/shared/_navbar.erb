@@ -1,0 +1,12 @@
+<div class="navbar navbar-light bg-faded navbar-static-top" role="navigation">
+  <div class="nav navbar-nav">
+    <a class="nav-item nav-link <%= "active" if params[:action] == "home" %>" href="/">ArchRails</a>
+    <a class="nav-item nav-link <%= "active" if params[:action] == "conduct" %>" href="/conduct">Conduct</a>
+    <a class="nav-item nav-link <%= "active" if params[:action] == "values" %>" href="/values">Values</a>
+    <a class="nav-item nav-link <%= "active" if params[:action] == "about" %>" href="/about">About</a>
+  </div>
+  <div class="nav navbar-nav pull-xs-right">
+    <a class="nav-item nav-link" href="https://github.com/ZempTime/archrails.com" target="_blank">Source</a>
+    <a class="nav-item nav-link" href="http://www.meetup.com/arch-rails/">Meetup</a>
+  </div>
+</div>
