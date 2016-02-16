@@ -1,5 +1,6 @@
 <div class="navbar navbar-light bg-faded navbar-static-top" role="navigation">
   <div class="nav navbar-nav">
+    <%= image_tag("archrails_logo.jpeg", size: "45x45", class: "navbar-icon img-rounded pull-xs-left pull-sm-left pull-md-left pull-lg-left") %>
     <a class="nav-item nav-link <%= "active" if params[:action] == "home" %>" href="/">ArchRails</a>
     <a class="nav-item nav-link <%= "active" if params[:action] == "conduct" %>" href="/conduct">Conduct</a>
     <a class="nav-item nav-link <%= "active" if params[:action] == "values" %>" href="/values">Values</a>
