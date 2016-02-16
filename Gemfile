@@ -15,6 +15,8 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 gem 'redis', '~> 3.0'
 
+gem 'rails_12factor', group: :production
+
 gem 'bootstrap', '~> 4.0.0.alpha3'
 gem 'font-awesome-rails', '~> 4.5'
 
