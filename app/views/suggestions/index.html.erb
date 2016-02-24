@@ -1,18 +1,20 @@
 <div class="jumbotron jumbotron-fluid">
   <div class="container">
-    <h1 class="display-3"> <%= titleize params[:category] %> Ideas</h1>
+    <h1 class="display-3"> <%= titleize params[:category] %> Ideas <%= link_to "Have an Idea?", new_suggestion_path(category: params[:category]), class: "btn btn-primary-outline" %></h1>
   </div>
 </div>
 
 <div class="container">
   <div class="row">
-    <ul>
-      <% @suggestions.each do |suggestion| %>
-        <li>
-          <%= suggestion.content %> <%= "- #{suggestion.author}" if suggestion.author? %>
-        </li>
-      <% end %>
-    </ul>
-    <%= link_to "Back", root_path %>
+      <ul >
+        <% @suggestions.each_with_index do |suggestion, i| %>
+        <blockquote class="blockquote <%= "blockquote-reverse" if i.odd? %>">
+          <p class="m-b-0"><%= suggestion.content %></p>
+          <% if suggestion.author? %>
+          <footer class="blockquote-footer"><strong><%= suggestion.author %></strong> <%= suggestion.created_at.strftime("%b %d, %Y") %></footer>
+          <% end %>
+        </blockquote>
+        <% end %>
+      </ul>
   </div>
 </div>
